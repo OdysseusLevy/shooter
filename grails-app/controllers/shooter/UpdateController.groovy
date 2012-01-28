@@ -1,16 +1,14 @@
 package shooter
 
-import grails.converters.deep.JSON
+import grails.converters.JSON;
+
 class UpdateController {
 
+    GameService gameService;
+    
     def index() 
 	{
-	  Sprite sprite = new Sprite()
-	  sprite.x = 20
-	  sprite.y = 20
-	  sprite.name = "booya!"
-
-          render sprite as JSON
+	    render gameService.getGameState() as JSON
  	}
 }
 
