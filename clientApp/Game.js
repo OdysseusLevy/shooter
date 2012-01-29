@@ -93,7 +93,7 @@ document.onkeyup = function( event )
 var isGetting;  /* jQuery get lock. */ 
 var model;      /* the client's copy of the current server game graph model. */
 
-var GET_JSON_URL = "http://localhost/model";    /* the special url to get our game model. */
+var GET_JSON_URL = "http://localhost:8080/shooter/update/index";  /* the special url to get our game model. */
 
 /*
 *   return our jquery get results.
