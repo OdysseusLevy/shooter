@@ -1,0 +1,38 @@
+<html>
+<head>
+    <!--..yarn, uly, december2011..-->
+    <title>yarn</title>
+	<style>
+		body {
+			margin:0px;
+			padding:0px;
+			text-align:center;
+            background:#303030;
+		}
+		
+		canvas{
+			outline:0;
+			border:1px solid #000;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+</head>
+<body>
+<canvas id='id_canvas' ></canvas>
+<!--
+*
+*   *big heavy sigh*, from what I can tell javaScript can emulate OOP style,
+*   by importing your *.js files in reverse order of dependency.
+*
+-->
+<!-- 0. base classes --> 
+<!-- 1. intermediate classes --> 
+<script src="Pew.js" type="text/javascript" ></script> 
+<!-- 2. top level objects and game and managers. --> 
+<script src="GameFactory.js" type="text/javascript" ></script> 
+<script src="Game.js" type="text/javascript" ></script> <!-- last! -->
+<script src="Player.js" type="text/javascript" ></script> 
+<script src="Modeller.js" type="text/javascript" ></script> 
+</body>
+</html>
