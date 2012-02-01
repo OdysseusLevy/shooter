@@ -25,7 +25,7 @@ function Resources()
     /*
     *   return our cached image files.
     */
-    this.getImages()
+    this.getImages = function()
     {
         if ( _images )
                 return _images;
@@ -36,7 +36,7 @@ function Resources()
         //  TODO:find a better way of collecting image file names.
         //  perhaps an "ls", or something.
         //
-        var imageFileNames = [ "ship.png", 'pew.png" ];
+        var imageFileNames = [ "ship.png", "pew.png" ];
 
         //
         //  assemble our image resource dictionary.
@@ -45,9 +45,9 @@ function Resources()
         // 
 
         var fileName, image;
-        for ( var i = imageFilesNames.length; i > 0; i-- )
+        for ( var i = imageFileNames.length; i > 0; i-- )
         {
-            fileName = imageFilesNames[ i - 1 ];
+            fileName = imageFileNames[ i - 1 ];
             image = new Image();
             image.src = fileName;
             _images[ fileName ] = image;

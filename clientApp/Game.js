@@ -27,8 +27,6 @@ var clearCanvas = function(){
 } 
 
 var gameFactory = new GameFactory();
-var player = gameFactory.getPlayer();
-player.setPosition(~~((width-player.width)/2), ~~((height - player.height)/2)); 
 
 //
 //  input event handlers.
@@ -40,22 +38,22 @@ document.onkeydown = function( event )
     {
         case 87:  /* w */
         case 38:  /* up-arrow */
-            player.setIsMovingUp( true ); 
+            //player.setIsMovingUp( true ); 
             break;
         case 83:  /* s */
         case 40:  /* down-arrow */
-            player.setIsMovingDown( true );
+            //player.setIsMovingDown( true );
             break;
         case 65:  /* a */
         case 37:  /* left-arrow */
-            player.setIsMovingLeft( true );
+            //player.setIsMovingLeft( true );
             break;
         case 68:  /* d */
         case 39:  /* right-arrow */ 
-            player.setIsMovingRight( true );
+            //player.setIsMovingRight( true );
             break; 
         case 32:  /* spaceBar */
-            player.setIsShooting( true );
+            //player.setIsShooting( true );
             break; 
         default:
             break;
@@ -68,22 +66,22 @@ document.onkeyup = function( event )
     {
         case 87:  /* w */
         case 38:  /* up-arrow */
-            player.setIsMovingUp( false );
+            //player.setIsMovingUp( false );
             break;
         case 83:  /* s */
         case 40:  /* down-arrow */
-            player.setIsMovingDown( false );
+            //player.setIsMovingDown( false );
             break;
         case 65:  /* a */
         case 37:  /* left-arrow */
-            player.setIsMovingLeft( false );
+            //player.setIsMovingLeft( false );
             break;
         case 68:  /* d */
         case 39:  /* right-arrow */
-            player.setIsMovingRight( false );
+            //player.setIsMovingRight( false );
             break;
         case 32:  /* spaceBar */
-            player.setIsShooting( false );
+            //player.setIsShooting( false );
             break; 
         default:
             break;
@@ -91,7 +89,7 @@ document.onkeyup = function( event )
 } 
 
 var isGetting;  /* jQuery get lock. */ 
-var model;      /* the client's copy of the current server game graph model. */
+var model = new Array();      /* the client's copy of the current server game graph model. */
 
 var GET_JSON_URL = "http://localhost:8080/shooter/update/index";  /* the special url to get our game model. */
 

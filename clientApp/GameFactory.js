@@ -18,7 +18,7 @@ function GameFactory()
     //
 
     /* cached image files. */
-    var images = Resources.getImages();
+    var images = ( new Resources() ).getImages();
 
     //
     //  public methods.
@@ -32,10 +32,14 @@ function GameFactory()
     */
     this.drawModel = function( ctx, model )
     {
-        $.each( model, function( item ) ) 
+        var x, y, fileName;
+        $.each( model, function( item ) 
         {
-            drawSprite( ctx, x, y,  );
-        }
+            x = item.x; 
+            y = item.y;
+            fileName = "ship.png";  // TODO!
+            drawSprite( ctx, x, y, fileName );
+        });
     }
 
     /*
