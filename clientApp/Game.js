@@ -91,7 +91,7 @@ document.onkeyup = function( event )
 var isGetting;  /* jQuery get lock. */ 
 var model = new Array();      /* the client's copy of the current server game graph model. */
 
-var GET_JSON_URL = "http://localhost:8080/shooter/update/index";  /* the special url to get our game model. */
+var GET_JSON_URL = "http://localhost:8080/shooter/update/index?callback=?";  /* the special url to get our game model. */
 
 /*
 *   return our jquery get results.
@@ -102,13 +102,12 @@ var refreshModel = function()
             return;
 
     isGetting = true; 
-    $.get( GET_JSON_URL, 
-            function( data )
+    $.getJSON( GET_JSON_URL, 
+            function( jason )
             {  
-                model = data.model; 
+                model = jason; 
                 isGetting = false;  // release lock.
-            } 
-            , "json" );
+            } );
 } 
 
 /*
