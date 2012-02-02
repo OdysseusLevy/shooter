@@ -1,6 +1,6 @@
-package shooter
+package org.cosmosgame.grailsgame
 
-import java.util.TimerTask;
+import org.cosmosgame.grailsgame.Sprite
 
 class GameService {
 
@@ -12,7 +12,7 @@ class GameService {
     def sprites;
     static int maxwidth = 800;
     static int maxheight= 1200;
-    
+
     class GameTimerTask extends TimerTask
     {
         def sprites;
@@ -23,26 +23,26 @@ class GameService {
         }
 
         public void run() {
-            sprites.each 
-            { it.x += it.deltaX
-              if (it.x >= maxwidth )
-                  it.x = 0;
-              else if (it.x < 0)
-              {
-                  it.x = width - it.width;
-              }
-                
-              it.y += it.deltaY;
-              if (it.y >= maxwidth)
-                  it.y = 0;
-              else if (it.y < 0)
-              {
-                  it.y = maxheight = it.height;
-              }
-            }
+            sprites.each
+                    { it.x += it.deltaX
+                        if (it.x >= maxwidth )
+                            it.x = 0;
+                        else if (it.x < 0)
+                        {
+                            it.x = width - it.width;
+                        }
+
+                        it.y += it.deltaY;
+                        if (it.y >= maxwidth)
+                            it.y = 0;
+                        else if (it.y < 0)
+                        {
+                            it.y = maxheight = it.height;
+                        }
+                    }
         }
     }
-    
+
     GameService()
     {
         Sprite sprite1 = new Sprite()
@@ -52,8 +52,8 @@ class GameService {
         sprite1.height = 10;
 
         sprite1.deltaX = 5;
-        sprite1.name = "Ship 1"
-        
+        sprite1.name = "Ship 1 (grailsgame)"
+
         Sprite sprite2 = new Sprite();
         sprite2.x = 60;
         sprite2.y = 80;
@@ -61,7 +61,7 @@ class GameService {
         sprite2.height = 20;
 
         sprite2.deltaY = 5;
-        sprite2.name = "Ship 2"   
+        sprite2.name = "Ship 2 (grailsgame)"
 
         sprites = [sprite1, sprite2];
         gameTimerTask = new GameTimerTask(sprites);
@@ -69,7 +69,7 @@ class GameService {
         timer.scheduleAtFixedRate(gameTimerTask, 5, 50)
 
     }
-    
+
     def getGameState() {
         return sprites;
     }
