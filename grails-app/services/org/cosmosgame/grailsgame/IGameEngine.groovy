@@ -11,6 +11,8 @@ interface IGameEngine
 {
     public void start();
     public void stop();
+    public void tick();
+
     public void load(Game g);
     public def getState();
 }

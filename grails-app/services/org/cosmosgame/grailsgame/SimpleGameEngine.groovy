@@ -19,6 +19,11 @@ class SimpleGameEngine implements IGameEngine
 
     }
 
+    public void tick()
+    {
+
+    }
+
     public void load(Game g)
     {
 
