@@ -10,27 +10,8 @@ package org.cosmosgame.mapbuilder;
 
 */
 
-
-import java.awt.*;
-
 public class MapParams
 {
-
-    //-------------------------------------------------------------------
-    // Global Constants
-    //
-    public static final byte WORLDSIZE_TINY = 0;
-    public static final byte WORLDSIZE_SMALL = 1;
-    public static final byte WORLDSIZE_NORMAL = 2;
-    public static final byte WORLDSIZE_HUGE = 3;
-    public static final String [] sWorldSizeStrings = {
-            "Tiny", "Small", "Normal", "Huge"
-    };
-    public static final short WORLDSIZE_DIM_TINY = 32;
-    public static final short WORLDSIZE_DIM_SMALL = 64;
-    public static final short WORLDSIZE_DIM_NORMAL = 128;
-    public static final short WORLDSIZE_DIM_HUGE = 256;
-
 
     //-------------------------------------------------------------------
     // Instance Variables
@@ -376,28 +357,6 @@ public class MapParams
      Default 20.
      */
     public byte MTDELTA = 20;
-
-    // Terrain Images
-    public String [] sTerrainImageLocation =  {
-            "img/NoType.gif",
-            "img/DeepOcean.gif",
-            "img/Ocean.gif",
-            "img/Mountains.gif",
-            "img/ImpassableMountains.gif",
-            "img/Volcano.gif",
-            "img/Ice.gif",
-            "img/Tundra.gif",
-            "img/Steppe.gif",
-            "img/Prairie.gif",
-            "img/Savannah.gif",
-            "img/Forest.gif",
-            "img/Jungle.gif",
-            "img/Swamp.gif",
-            "img/Desert.gif"
-    };
-    public Image [] pTerrainImage = new Image [Hex.NUM_TERRAIN+1];
-
-
 
     //-------------------------------------------------------------------
     // Constructors

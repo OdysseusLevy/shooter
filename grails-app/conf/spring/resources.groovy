@@ -4,7 +4,7 @@ beans =
 
     mapParams(org.cosmosgame.mapbuilder.MapParams)
             {
-                dimension = 128
+                dimension = 256
             }
     mapBuilder(org.cosmosgame.mapbuilder.MapBuilder)
             {

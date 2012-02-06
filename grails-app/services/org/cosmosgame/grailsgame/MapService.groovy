@@ -1,8 +1,6 @@
 package org.cosmosgame.grailsgame
 
-import org.cosmosgame.mapbuilder.MapBuilder
-import org.cosmosgame.mapbuilder.MapParams
-import org.cosmosgame.mapbuilder.TerrainMap
+import org.cosmosgame.mapbuilder.*
 
 class MapService {
 
@@ -15,12 +13,12 @@ class MapService {
         mapBuilder.init(mapParams);
         mapBuilder.generateWorld();
 
-        def hexes = mapBuilder.hex;
+        List hexes = mapBuilder.hex;
 
-        List list;
+        List result = []
 
-        hexes.each { list << {}}
-        TerrainMap map = new TerrainMap(mapBuilder);
+        hexes.each { result << new Terrain(gridX: it.getX(), gridY: it.getY(), terrainType: it.getTerrainType(), terrainName: it.getTerrainName())}
+        TerrainMap map = new TerrainMap(terrains: result);
         return map;
     }
 }
