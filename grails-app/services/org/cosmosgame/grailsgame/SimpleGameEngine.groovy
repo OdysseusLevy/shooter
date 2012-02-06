@@ -29,7 +29,7 @@ class SimpleGameEngine implements IGameEngine
 
     }
 
-    public def getState()
+    public List getState()
     {
 
     }
